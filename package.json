@@ -1,0 +1,24 @@
+{
+  "name": "dsh-context-dial",
+  "version": "0.2.0",
+  "description": "Set a model's context window from a plugin page in DSH settings; applied on the next DSH start.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": ">=3.18.0"
+  }
+}

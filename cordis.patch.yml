@@ -1,0 +1,10 @@
+# dsh-context-dial bundle patch
+#
+# `id` 必须等于这个插件暴露的设置命名空间名（`context-dial`）。
+# DSH 0.2 的 settings 定位方式是 configEditor.entries().find(row => row.options.id === ns)，
+# 再取 entry.fiber.runtime.Config 当 schema；id 与命名空间不同名时，设置页里不会出现这个
+# 命名空间，下面这些字段也就无法热改。
+- insert:
+    - id: context-dial
+      name: dsh-context-dial
+      config: {}
