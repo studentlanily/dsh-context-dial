@@ -9,6 +9,29 @@
     "./client": "./client.js",
     "./package.json": "./package.json"
   },
+  "files": [
+    "index.js",
+    "plan.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "context-window",
+    "compaction"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/studentlanily/dsh-context-dial.git"
+  },
+  "bugs": {
+    "url": "https://github.com/studentlanily/dsh-context-dial/issues"
+  },
+  "homepage": "https://github.com/studentlanily/dsh-context-dial#readme",
+  "author": "studentlanily",
   "license": "MIT",
   "dsh": {
     "bundle": {
