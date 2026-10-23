@@ -84,6 +84,10 @@ POST /api/settings/update     { args: { ns: 'context-dial', patch: {...} } }
 
 ## 已知边界
 
+- **依赖 `@deepseek-ai/schemastery` 能被解析到。** 插件的 host 半在顶层 import 它，
+  而 DSH 的宿主包打在 `app.asar` 里、不走 profile 的 `node_modules`。所以安装目录
+  的上层必须能找到这个包（`install.mjs` 会尝试从同仓 `node_modules` 建一条链接）。
+  否则启动时报 `ERR_MODULE_NOT_FOUND`，整个 entry 不激活。
 - **只改「声明窗口」，不扩容。** 设得比 llama-server 的 `-c` 大，请求照样会被 provider
   拒绝。这个插件是用来**对齐**的。
 - 依赖 `llm-pi-ai` 的 `providers` 字段在 DSH 里是 `volatile` 的。如果某个版本不是，
